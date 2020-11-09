@@ -17,11 +17,6 @@ export default function ItemListmenu() {
           keyExtractor={(data) => data.key}
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <Itemlist name={item.name} />}
-
-          //data
-          //renederitem
-          //horsbi
-          //seprator
         />
       </View>
     </View>

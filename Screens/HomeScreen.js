@@ -5,9 +5,12 @@ import { View, Text, StyleSheet, SafeAreaView, Image } from "react-native";
 import SearchCom from "../components/SearchCom";
 import ItemListmenu from "../components/itemListmenu";
 import Menuitem from "../components/Menuitemcom";
+import Recipeitem from "../components/Recipeitem";
 //files
 import Colors from "../config/colors";
 import Menuitemcom from "../components/Menuitemcom";
+import { FlatList } from "react-native-gesture-handler";
+import Recipedata from "../data/Recipedata";
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
@@ -30,7 +33,7 @@ export default function HomeScreen() {
 
       <SearchCom />
       <ItemListmenu />
-      <Menuitem />
+      <Menuitemcom />
     </SafeAreaView>
   );
 }
