@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     flex: 1,
     alignItems: "center",
+    justifyContent: "space-evenly",
 
     overflow: "hidden",
     marginLeft: 50,

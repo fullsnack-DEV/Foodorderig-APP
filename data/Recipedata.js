@@ -5,23 +5,23 @@ export default [
     img: require("../assets/recipe1.png"),
   },
   {
-    name: "Spicy Fruit Salad",
-    price: "19$",
+    name: "Veggie Tomato Mix",
+    price: "14$",
     img: require("../assets/recipe2.png"),
   },
   {
-    name: "Sassy Pasta",
+    name: "Veggie Tomato Mix",
+    price: "18$",
+    img: require("../assets/recipe3.png"),
+  },
+  {
+    name: "Veggie Tomato Mix",
+    price: "13$",
+    img: require("../assets/recipe2.png"),
+  },
+  {
+    name: "Veggie Tomato Mix",
     price: "25$",
-    img: require("../assets/recipe1.png"),
-  },
-  {
-    name: "Red Pasta",
-    price: "29$",
-    img: require("../assets/recipe2.png"),
-  },
-  {
-    name: "Veggie bowl",
-    price: "35$",
     img: require("../assets/recipe1.png"),
   },
 ];

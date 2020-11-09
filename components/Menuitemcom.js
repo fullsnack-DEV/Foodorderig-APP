@@ -21,6 +21,10 @@ export default function Menuitemcom() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    height: "50%",
+  },
+});
 
 //we gonna build a flatlist in the component using the fake data
