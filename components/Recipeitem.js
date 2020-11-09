@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+
+const HEIGHT = Dimensions.get("window").height;
+
+const WIDTH = Dimensions.get("window").width;
+
+const IMGHEIGHT = HEIGHT * 0.35;
+const IMGWIDTH = WIDTH * 0.45;
 
 export default function Recipeitem({ title, price, img }) {
   return (
@@ -7,7 +14,9 @@ export default function Recipeitem({ title, price, img }) {
       <Image style={styles.img} source={img} />
 
       <View style={styles.txtcontaoner}>
-        <Text style={styles.txt}> {title} </Text>
+        <Text style={styles.txt} numberOfLines={2}>
+          {title}
+        </Text>
         <Text style={styles.price}>{price}</Text>
       </View>
     </View>
@@ -16,35 +25,48 @@ export default function Recipeitem({ title, price, img }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: "65%",
-    width: "65%",
+    height: IMGHEIGHT,
+    width: IMGWIDTH,
     backgroundColor: "#fff",
     borderRadius: 30,
     flex: 1,
     alignItems: "center",
     justifyContent: "space-evenly",
+    padding: 10,
 
-    overflow: "hidden",
     marginLeft: 50,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.32,
+    shadowRadius: 5.46,
+
+    elevation: 9,
   },
 
   img: {
-    height: "60%",
-    width: "70%",
-    borderRadius: 20,
+    height: "80%",
+    width: "80%",
+    alignSelf: "center",
+    borderRadius: 15,
     resizeMode: "contain",
   },
   txtcontaoner: {
+    alignContent: "center",
     alignSelf: "center",
   },
   txt: {
     fontFamily: "itim",
-    fontSize: 20,
+    fontSize: 18,
+    marginLeft: 18,
   },
 
   price: {
-    alignSelf: "center",
     fontFamily: "itim",
-    fontSize: 18,
+    fontSize: 15,
+    alignSelf: "center",
+    marginBottom: 10,
   },
 });

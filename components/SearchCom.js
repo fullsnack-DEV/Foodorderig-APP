@@ -31,6 +31,15 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignContent: "flex-start",
     overflow: "hidden",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 10,
   },
   txt: {
     height: "100%",

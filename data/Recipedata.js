@@ -10,9 +10,9 @@ export default [
     img: require("../assets/recipe2.png"),
   },
   {
-    name: "Veggie Tomato Mix",
+    name: "Spicy Salad Mix",
     price: "18$",
-    img: require("../assets/recipe3.png"),
+    img: require("../assets/recipe2.png"),
   },
   {
     name: "Veggie Tomato Mix",
