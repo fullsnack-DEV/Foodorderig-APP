@@ -33,19 +33,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     padding: 10,
-
+    zIndex: 1,
+    marginTop: 20,
     marginLeft: 50,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 1,
     },
-    shadowOpacity: 0.32,
-    shadowRadius: 5.46,
-
-    elevation: 9,
+    shadowOpacity: 0.11,
+    shadowRadius: 1.0,
   },
-
   img: {
     height: "80%",
     width: "80%",

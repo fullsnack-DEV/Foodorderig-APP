@@ -1,19 +1,43 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-
-export default function Itemlist({ name }) {
+import { View, Text, StyleSheet, Dimensions, ScrollView } from "react-native";
+const HEIGHT = Dimensions.get("window").height;
+const WIDTH = Dimensions.get("window").width;
+export default function Itemlist() {
   return (
-    <View>
-      <Text style={styles.txt}>{name}</Text>
+    <View style={styles.container}>
+      <View style={styles.wrapper}>
+        <Text style={styles.txt}>Foods</Text>
+      </View>
+
+      <View style={styles.wrapper}>
+        <Text style={styles.txt}>Drinks</Text>
+      </View>
+      <View style={styles.wrapper}>
+        <Text style={styles.txt}>Snacks</Text>
+      </View>
+      <View style={styles.wrapper}>
+        <Text style={styles.txt}>Sauces</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginLeft: 30,
+  },
+  wrapper: {
+    backgroundColor: "red",
+    height: HEIGHT * 0.04,
+    width: WIDTH * 0.2,
+    borderRadius: 40,
+  },
   txt: {
-    fontSize: 18,
+    color: "#fff",
     fontFamily: "itim",
-    marginLeft: 20,
-    marginRight: 15,
+    fontSize: 20,
+    alignSelf: "center",
   },
 });

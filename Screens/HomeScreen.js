@@ -1,16 +1,21 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  ScrollView,
+} from "react-native";
 
 //components
 import SearchCom from "../components/SearchCom";
 import ItemListmenu from "../components/itemListmenu";
-import Menuitem from "../components/Menuitemcom";
-import Recipeitem from "../components/Recipeitem";
+import Menuitemcom from "../components/Menuitemcom";
 //files
 import Colors from "../config/colors";
-import Menuitemcom from "../components/Menuitemcom";
-import { FlatList } from "react-native-gesture-handler";
-import Recipedata from "../data/Recipedata";
+import Itemlist from "../components/Itemlist";
+
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
@@ -26,14 +31,17 @@ export default function HomeScreen() {
           />
         </View>
       </View>
+
       <View style={styles.txtcontainer}>
         <Text style={styles.txt}> Delicious </Text>
         <Text style={styles.txt1}>food for you </Text>
       </View>
 
       <SearchCom />
-      <ItemListmenu />
-      <Menuitemcom />
+      <Itemlist />
+      <ScrollView style={{ flex: 1 }}>
+        <Menuitemcom />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -41,6 +49,9 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  itemcontainer: {
+    top: 15,
   },
   navbar: {
     flexDirection: "row",

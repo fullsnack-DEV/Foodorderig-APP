@@ -1,12 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Dimensions } from "react-native";
 
 import Recipedata from "../data/Recipedata";
 import Recipeitem from "./Recipeitem";
+const HEIGHT = Dimensions.get("window").height;
+const WIDTH = Dimensions.get("window").width;
 
-export default function Menuitemcom() {
+const FIXEDHEIGHT = HEIGHT * 0.4;
+
+export default function Menuitemcom({ style }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <FlatList
         data={Recipedata}
         horizontal
