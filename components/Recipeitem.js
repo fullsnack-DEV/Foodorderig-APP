@@ -1,17 +1,32 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Animated,
+} from "react-native";
 
 const HEIGHT = Dimensions.get("window").height;
 
 const WIDTH = Dimensions.get("window").width;
 
-const IMGHEIGHT = HEIGHT * 0.35;
-const IMGWIDTH = WIDTH * 0.45;
+const CONHEIGHT = HEIGHT * 0.35;
+const CONWIDTH = WIDTH * 0.45;
 
-export default function Recipeitem({ title, price, img }) {
+const IMGHEIGHT = HEIGHT * 0.25;
+const IMGWIDTH = WIDTH * 0.3;
+
+export default function Recipeitem({ title, price, img, index, scrollX }) {
+  const inputRange = [(index - 1) * WIDTH, index * WIDTH, (index + 1) * WIDTH];
+  const scale = scrollX.interpolate({
+    inputRange,
+    outputRange: [0, 1, 0],
+  });
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={img} />
+      <Animated.Image style={styles.img} source={img} />
 
       <View style={styles.txtcontaoner}>
         <Text style={styles.txt} numberOfLines={2}>
@@ -25,8 +40,8 @@ export default function Recipeitem({ title, price, img }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: IMGHEIGHT,
-    width: IMGWIDTH,
+    height: CONHEIGHT,
+    width: CONWIDTH,
     backgroundColor: "#fff",
     borderRadius: 30,
     flex: 1,
@@ -34,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     padding: 10,
     zIndex: 1,
-    marginTop: 20,
+    marginTop: 30,
     marginLeft: 50,
     shadowColor: "#000",
     shadowOffset: {
@@ -45,8 +60,8 @@ const styles = StyleSheet.create({
     shadowRadius: 1.0,
   },
   img: {
-    height: "80%",
-    width: "80%",
+    height: IMGHEIGHT,
+    width: IMGWIDTH,
     alignSelf: "center",
     borderRadius: 15,
     resizeMode: "contain",

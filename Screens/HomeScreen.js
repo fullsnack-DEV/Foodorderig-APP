@@ -38,8 +38,15 @@ export default function HomeScreen() {
       </View>
 
       <SearchCom />
-      <Itemlist />
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView>
+        <Itemlist title="Foods" />
+
+        <Menuitemcom />
+
+        <Itemlist title="Drinks" />
+
+        <Menuitemcom />
+        <Itemlist title="Sauces" />
         <Menuitemcom />
       </ScrollView>
     </SafeAreaView>

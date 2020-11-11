@@ -1,23 +1,23 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+
 const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
-export default function Itemlist() {
+export default function Itemlist({ title }) {
   return (
     <View style={styles.container}>
-      <View style={styles.wrapper}>
-        <Text style={styles.txt}>Foods</Text>
-      </View>
-
-      <View style={styles.wrapper}>
-        <Text style={styles.txt}>Drinks</Text>
-      </View>
-      <View style={styles.wrapper}>
-        <Text style={styles.txt}>Snacks</Text>
-      </View>
-      <View style={styles.wrapper}>
-        <Text style={styles.txt}>Sauces</Text>
-      </View>
+      <TouchableOpacity>
+        <View style={styles.wrapper}>
+          <Text style={styles.txt}>{title}</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -25,8 +25,8 @@ export default function Itemlist() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    marginLeft: 30,
+
+    marginLeft: 50,
   },
   wrapper: {
     backgroundColor: "red",
