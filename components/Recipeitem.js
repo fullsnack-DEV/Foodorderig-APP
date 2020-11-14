@@ -7,26 +7,40 @@ import {
   Dimensions,
   Animated,
 } from "react-native";
+import Colors from "../config/colors";
 
 const HEIGHT = Dimensions.get("window").height;
 
 const WIDTH = Dimensions.get("window").width;
 
-const CONHEIGHT = HEIGHT * 0.35;
+const CONHEIGHT = HEIGHT * 0.31;
 const CONWIDTH = WIDTH * 0.45;
 
 const IMGHEIGHT = HEIGHT * 0.25;
-const IMGWIDTH = WIDTH * 0.3;
+const IMGWIDTH = WIDTH * 0.5;
 
 export default function Recipeitem({ title, price, img, index, scrollX }) {
-  const inputRange = [(index - 1) * WIDTH, index * WIDTH, (index + 1) * WIDTH];
+  const inputRange = [
+    (index - 1) * IMGHEIGHT,
+    index * IMGHEIGHT,
+    (index + 1) * IMGHEIGHT,
+  ];
   const scale = scrollX.interpolate({
     inputRange,
-    outputRange: [0, 1, 0],
+    outputRange: [0, -35, 0],
   });
   return (
     <View style={styles.container}>
-      <Animated.Image style={styles.img} source={img} />
+      <Animated.View
+        style={
+          (styles.imgcontainer,
+          {
+            transform: [{ translateY: scale }],
+          })
+        }
+      >
+        <Image style={styles.img} source={img} />
+      </Animated.View>
 
       <View style={styles.txtcontaoner}>
         <Text style={styles.txt} numberOfLines={2}>
@@ -49,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     padding: 10,
     zIndex: 1,
-    marginTop: 30,
+    marginTop: 50,
     marginLeft: 50,
     shadowColor: "#000",
     shadowOffset: {
@@ -66,6 +80,10 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     resizeMode: "contain",
   },
+  imgcontainer: {
+    height: IMGHEIGHT,
+    width: IMGWIDTH,
+  },
   txtcontaoner: {
     alignContent: "center",
     alignSelf: "center",
@@ -81,5 +99,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     alignSelf: "center",
     marginBottom: 10,
+    color: Colors.main_color,
   },
 });

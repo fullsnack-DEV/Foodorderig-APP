@@ -2,7 +2,7 @@ export default [
   {
     name: "Veggie Tomato Mix",
     price: "12$",
-    img: require("../assets/recipe1.png"),
+    img: require("../assets/recipe2.png"),
   },
   {
     name: "Veggie Tomato Mix",
@@ -22,6 +22,6 @@ export default [
   {
     name: "Veggie Tomato Mix",
     price: "25$",
-    img: require("../assets/recipe1.png"),
+    img: require("../assets/recipe2.png"),
   },
 ];

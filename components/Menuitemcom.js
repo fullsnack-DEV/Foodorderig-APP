@@ -18,6 +18,9 @@ const WIDTH = Dimensions.get("window").width;
 const IMGHEIGHT = HEIGHT * 0.35;
 const IMGWIDTH = WIDTH * 0.25;
 
+const CONHEIGHT = HEIGHT * 0.35;
+const CONWIDTH = WIDTH * 0.1;
+
 export default function Menuitemcom({ style }) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
@@ -26,10 +29,11 @@ export default function Menuitemcom({ style }) {
       <Animated.FlatList
         data={Recipedata}
         horizontal
+        snapToInterval={CONWIDTH}
         keyExtractor={(Recipedata) => Recipedata.price}
         showsHorizontalScrollIndicator={false}
         style={styles.flat}
-        snapToInterval={IMGWIDTH}
+        scrollEventThrottle={16}
         renderItem={({ item, index }) => (
           <Recipeitem
             title={item.name}
