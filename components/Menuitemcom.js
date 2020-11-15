@@ -21,16 +21,16 @@ const IMGWIDTH = WIDTH * 0.25;
 const CONHEIGHT = HEIGHT * 0.35;
 const CONWIDTH = WIDTH * 0.1;
 
-export default function Menuitemcom({ style }) {
+export default function Menuitemcom({ style, results }) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   return (
     <View style={[styles.container, style]}>
       <Animated.FlatList
-        data={Recipedata}
+        data={results}
         horizontal
         snapToInterval={CONWIDTH}
-        keyExtractor={(Recipedata) => Recipedata.price}
+        keyExtractor={(results) => results.price}
         showsHorizontalScrollIndicator={false}
         style={styles.flat}
         scrollEventThrottle={16}

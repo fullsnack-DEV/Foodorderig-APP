@@ -10,11 +10,20 @@ import {
 
 //components
 import SearchCom from "../components/SearchCom";
-import ItemListmenu from "../components/itemListmenu";
+
 import Menuitemcom from "../components/Menuitemcom";
+
 //files
 import Colors from "../config/colors";
 import Itemlist from "../components/Itemlist";
+import Recipedata from "../data/Recipedata";
+
+//functions
+const filterbytag = (tag) => {
+  return Recipedata.filter((Recipedata) => {
+    return Recipedata.tag == tag;
+  });
+};
 
 export default function HomeScreen() {
   return (
@@ -41,13 +50,13 @@ export default function HomeScreen() {
       <ScrollView>
         <Itemlist title="Foods" />
 
-        <Menuitemcom />
+        <Menuitemcom results={filterbytag("Foods")} />
 
         <Itemlist title="Drinks" />
 
-        <Menuitemcom />
+        <Menuitemcom results={filterbytag("Drinks")} />
         <Itemlist title="Sauces" />
-        <Menuitemcom />
+        <Menuitemcom results={filterbytag("Sauce")} />
       </ScrollView>
     </SafeAreaView>
   );
