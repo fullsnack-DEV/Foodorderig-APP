@@ -1,10 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function itemsScreen() {
+export default function itemsScreen({ route }) {
+  const { title } = route.params;
+
   return (
     <View>
-      <Text>Item Screen </Text>
+      <Text>{title}</Text>
+      <Text> </Text>
     </View>
   );
 }

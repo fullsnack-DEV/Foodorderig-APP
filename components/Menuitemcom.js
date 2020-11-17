@@ -41,6 +41,7 @@ export default function Menuitemcom({ style, results, navigation }) {
             img={item.img}
             price={item.price}
             index={index}
+            id={item.id}
             scrollX={scrollX}
             navigation={navigation}
           />

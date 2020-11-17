@@ -27,6 +27,7 @@ export default function Recipeitem({
   index,
   scrollX,
   navigation,
+  id,
 }) {
   const inputRange = [
     (index - 1) * IMGHEIGHT,
@@ -38,7 +39,13 @@ export default function Recipeitem({
     outputRange: [0, -33, 0],
   });
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Item")}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("Item", {
+          title, //passing the extra data between the screens
+        })
+      }
+    >
       <View style={styles.container}>
         <Animated.View
           style={
