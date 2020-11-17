@@ -26,7 +26,7 @@ export default function ItemListmenu() {
 const styles = StyleSheet.create({
   container: {
     marginVertical: 1,
-    height: "8%",
+    height: "15%",
   },
 
   items: {

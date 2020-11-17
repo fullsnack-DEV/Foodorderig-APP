@@ -6,6 +6,7 @@ import {
   Image,
   Dimensions,
   Animated,
+  TouchableOpacity,
 } from "react-native";
 import Colors from "../config/colors";
 
@@ -13,13 +14,20 @@ const HEIGHT = Dimensions.get("window").height;
 
 const WIDTH = Dimensions.get("window").width;
 
-const CONHEIGHT = HEIGHT * 0.31;
+const CONHEIGHT = HEIGHT * 0.35;
 const CONWIDTH = WIDTH * 0.45;
 
 const IMGHEIGHT = HEIGHT * 0.25;
 const IMGWIDTH = WIDTH * 0.5;
 
-export default function Recipeitem({ title, price, img, index, scrollX }) {
+export default function Recipeitem({
+  title,
+  price,
+  img,
+  index,
+  scrollX,
+  navigation,
+}) {
   const inputRange = [
     (index - 1) * IMGHEIGHT,
     index * IMGHEIGHT,
@@ -27,28 +35,30 @@ export default function Recipeitem({ title, price, img, index, scrollX }) {
   ];
   const scale = scrollX.interpolate({
     inputRange,
-    outputRange: [0, -35, 0],
+    outputRange: [0, -33, 0],
   });
   return (
-    <View style={styles.container}>
-      <Animated.View
-        style={
-          (styles.imgcontainer,
-          {
-            transform: [{ translateY: scale }],
-          })
-        }
-      >
-        <Image style={styles.img} source={img} />
-      </Animated.View>
+    <TouchableOpacity onPress={() => navigation.navigate("Item")}>
+      <View style={styles.container}>
+        <Animated.View
+          style={
+            (styles.imgcontainer,
+            {
+              transform: [{ translateY: scale }],
+            })
+          }
+        >
+          <Image style={styles.img} source={img} />
+        </Animated.View>
 
-      <View style={styles.txtcontaoner}>
-        <Text style={styles.txt} numberOfLines={2}>
-          {title}
-        </Text>
-        <Text style={styles.price}>{price}</Text>
+        <View style={styles.txtcontaoner}>
+          <Text style={styles.txt} numberOfLines={2}>
+            {title}
+          </Text>
+          <Text style={styles.price}>{price}</Text>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -63,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     padding: 10,
     zIndex: 1,
-    marginTop: 50,
+    marginTop: 60,
     marginLeft: 50,
     shadowColor: "#000",
     shadowOffset: {

@@ -25,7 +25,7 @@ const filterbytag = (tag) => {
   });
 };
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.navbar}>
@@ -50,7 +50,7 @@ export default function HomeScreen() {
       <ScrollView>
         <Itemlist title="Foods" />
 
-        <Menuitemcom results={filterbytag("Foods")} />
+        <Menuitemcom results={filterbytag("Foods")} navigation={navigation} />
 
         <Itemlist title="Drinks" />
 

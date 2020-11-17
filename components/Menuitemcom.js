@@ -7,6 +7,7 @@ import {
   Dimensions,
   Animated,
 } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import Recipedata from "../data/Recipedata";
 import Recipeitem from "./Recipeitem";
@@ -21,7 +22,7 @@ const IMGWIDTH = WIDTH * 0.25;
 const CONHEIGHT = HEIGHT * 0.35;
 const CONWIDTH = WIDTH * 0.1;
 
-export default function Menuitemcom({ style, results }) {
+export default function Menuitemcom({ style, results, navigation }) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   return (
@@ -41,6 +42,7 @@ export default function Menuitemcom({ style, results }) {
             price={item.price}
             index={index}
             scrollX={scrollX}
+            navigation={navigation}
           />
         )}
         onScroll={Animated.event(
@@ -57,7 +59,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    height: HEIGHT * 0.45,
+    height: HEIGHT * 0.38,
+    marginBottom: HEIGHT * 0.06,
     width: WIDTH,
   },
 });

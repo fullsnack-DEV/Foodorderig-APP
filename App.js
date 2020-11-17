@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
 import * as font from "expo-font";
 import { AppLoading } from "expo";
@@ -9,9 +10,17 @@ import { AppLoading } from "expo";
 //Screens Import
 import Welcomescreen from "./Screens/Welcomescreen";
 import HomeScreen from "./Screens/HomeScreen";
+import itemsScreen from "./Screens/itemsScreen";
 
 //constants
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+// const Tabnavigator = () => (
+//   <Tab.Navigator>
+//     <Tab.Screen name="Home" component={HomeScreen} />
+//   </Tab.Navigator>
+// );
 
 //code
 
@@ -34,6 +43,7 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={Welcomescreen} />
           <Stack.Screen name="Main" component={HomeScreen} />
+          <Stack.Screen name="Item" component={itemsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
