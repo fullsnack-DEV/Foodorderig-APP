@@ -14,7 +14,7 @@ const HEIGHT = Dimensions.get("window").height;
 
 const WIDTH = Dimensions.get("window").width;
 
-const CONHEIGHT = HEIGHT * 0.35;
+const CONHEIGHT = HEIGHT * 0.38;
 const CONWIDTH = WIDTH * 0.45;
 
 const IMGHEIGHT = HEIGHT * 0.25;
@@ -28,6 +28,8 @@ export default function Recipeitem({
   scrollX,
   navigation,
   id,
+  DeliveryDescription,
+  Returninfo,
 }) {
   const inputRange = [
     (index - 1) * IMGHEIGHT,
@@ -43,6 +45,11 @@ export default function Recipeitem({
       onPress={() =>
         navigation.navigate("Item", {
           title, //passing the extra data between the screens
+          img,
+          price,
+          DeliveryDescription,
+          Returninfo,
+          navigation,
         })
       }
     >

@@ -54,9 +54,9 @@ export default function HomeScreen({ navigation }) {
 
         <Itemlist title="Drinks" />
 
-        <Menuitemcom results={filterbytag("Drinks")} />
+        <Menuitemcom results={filterbytag("Drinks")} navigation={navigation} />
         <Itemlist title="Sauces" />
-        <Menuitemcom results={filterbytag("Sauce")} />
+        <Menuitemcom results={filterbytag("Sauce")} navigation={navigation} />
       </ScrollView>
     </SafeAreaView>
   );

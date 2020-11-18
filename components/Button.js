@@ -11,13 +11,13 @@ import Colors from "../config/colors";
 const WIDTH = Dimensions.get("window").width;
 
 const HEIGHT = Dimensions.get("window").width;
-export default function Button({ title, navigation }) {
+export default function Button({ title, navigation, style, txtstyle }) {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate("Main")}
-      style={styles.btn}
+      style={[styles.btn, style]}
     >
-      <Text style={styles.txt}>{title}</Text>
+      <Text style={[styles.txt, txtstyle]}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -36,5 +36,6 @@ const styles = StyleSheet.create({
     color: Colors.button_color,
     top: 5,
     fontFamily: "itim",
+    zIndex: 1,
   },
 });

@@ -44,6 +44,8 @@ export default function Menuitemcom({ style, results, navigation }) {
             id={item.id}
             scrollX={scrollX}
             navigation={navigation}
+            DeliveryDescription={item.DeliveryDescription}
+            Returninfo={item.Returninfo}
           />
         )}
         onScroll={Animated.event(
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    height: HEIGHT * 0.38,
+    height: HEIGHT * 0.4,
     marginBottom: HEIGHT * 0.06,
     width: WIDTH,
   },
