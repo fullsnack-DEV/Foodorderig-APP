@@ -14,7 +14,7 @@ const HEIGHT = Dimensions.get("window").width;
 export default function Button({ title, navigation, style, txtstyle }) {
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("Main")}
+      onPress={() => navigation.navigate("home")}
       style={[styles.btn, style]}
     >
       <Text style={[styles.txt, txtstyle]}>{title}</Text>
