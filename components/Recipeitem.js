@@ -43,7 +43,7 @@ export default function Recipeitem({
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("Item", {
+        navigation.navigate("detail", {
           title, //passing the extra data between the screens
           img,
           price,

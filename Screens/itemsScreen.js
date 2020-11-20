@@ -21,7 +21,7 @@ export default function itemsScreen({ route, navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.Navcontainer}>
         <View style={styles.iconleft}>
-          <TouchableOpacity onPress={() => navigation.navigate("Main")}>
+          <TouchableOpacity onPress={() => navigation.navigate("home")}>
             <Image source={require("../assets/chevronleft.png")} />
           </TouchableOpacity>
         </View>
