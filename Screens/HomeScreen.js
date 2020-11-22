@@ -47,7 +47,7 @@ export default function HomeScreen({ navigation }) {
       </View>
 
       <SearchCom />
-      <ScrollView>
+      <ScrollView style={{ flex: 1.5 }}>
         <Itemlist title="Foods" />
 
         <Menuitemcom results={filterbytag("Foods")} navigation={navigation} />
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1.8,
   },
   itemcontainer: {
     top: 15,

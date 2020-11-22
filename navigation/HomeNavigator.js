@@ -11,7 +11,6 @@ const HomeNavigator = () => (
       headerShown: false,
     }}
   >
-    <Stack.Screen name="welcome" component={Welcomescreen} />
     <Stack.Screen name="home" component={HomeScreen} />
     <Stack.Screen name="detail" component={itemsScreen} />
   </Stack.Navigator>

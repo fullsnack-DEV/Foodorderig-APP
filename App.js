@@ -12,6 +12,7 @@ import Welcomescreen from "./Screens/Welcomescreen";
 import HomeScreen from "./Screens/HomeScreen";
 import itemsScreen from "./Screens/itemsScreen";
 import AppNavigator from "./navigation/AppNavigator";
+import Authnavigator from "./navigation/Authnavigator";
 
 //constants
 const Stack = createStackNavigator();
