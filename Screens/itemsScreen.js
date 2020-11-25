@@ -9,13 +9,20 @@ import {
   TouchableOpacity,
 } from "react-native";
 import colors from "../config/colors";
-import Button from "../components/Button";
+import Button from "../components/buttonCart";
 
 const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
 
 export default function itemsScreen({ route, navigation }) {
-  const { title, img, price, DeliveryDescription, Returninfo } = route.params;
+  // const { img, price, DeliveryDescription, Returninfo, id } = route.params;
+
+  const { title } = route.params;
+  const { img } = route.params;
+  const { DeliveryDescription } = route.params;
+  const { id } = route.params;
+  const { Returninfo } = route.params;
+  const { price } = route.params;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -56,6 +63,13 @@ export default function itemsScreen({ route, navigation }) {
       </View>
       <View style={styles.btncontainer}>
         <Button
+          onPress={() =>
+            navigation.navigate("Like", {
+              title,
+              DeliveryDescription,
+            })
+          }
+          id={id}
           style={styles.btn}
           title="Add To Cart"
           txtstyle={{ color: "white" }}

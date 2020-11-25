@@ -23,7 +23,7 @@ const AppNavigator = () => (
         borderColor: "#fff",
       },
 
-      adaptive: true7,
+      adaptive: true,
       allowFontScaling: false,
       tabStyle: {
         backgroundColor: "#fff",

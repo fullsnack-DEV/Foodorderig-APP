@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
+} from "react-native";
 
 export default function SearchCom() {
   const [value, onchange] = useState();
@@ -20,7 +26,8 @@ export default function SearchCom() {
 const styles = StyleSheet.create({
   container: {
     marginVertical: 15,
-    height: "8%",
+    height: "7%",
+
     justifyContent: "center",
   },
   search: {

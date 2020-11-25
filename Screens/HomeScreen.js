@@ -10,7 +10,6 @@ import {
 
 //components
 import SearchCom from "../components/SearchCom";
-
 import Menuitemcom from "../components/Menuitemcom";
 
 //files
@@ -47,6 +46,7 @@ export default function HomeScreen({ navigation }) {
       </View>
 
       <SearchCom />
+
       <ScrollView style={{ flex: 1.5 }}>
         <Itemlist title="Foods" />
 
