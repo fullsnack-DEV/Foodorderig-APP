@@ -15,8 +15,6 @@ const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
 
 export default function itemsScreen({ route, navigation }) {
-  // const { img, price, DeliveryDescription, Returninfo, id } = route.params;
-
   const { title } = route.params;
   const { img } = route.params;
   const { DeliveryDescription } = route.params;
@@ -33,7 +31,15 @@ export default function itemsScreen({ route, navigation }) {
           </TouchableOpacity>
         </View>
         <View style={styles.iconheart}>
-          <Image source={require("../assets/heart.png")} />
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Like", {
+                id,
+              })
+            }
+          >
+            <Image source={require("../assets/heart.png")} />
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -67,9 +73,9 @@ export default function itemsScreen({ route, navigation }) {
             navigation.navigate("Like", {
               title,
               DeliveryDescription,
+              id,
             })
           }
-          id={id}
           style={styles.btn}
           title="Add To Cart"
           txtstyle={{ color: "white" }}
