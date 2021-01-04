@@ -10,11 +10,16 @@ import {
 } from "react-native";
 import colors from "../config/colors";
 import Button from "../components/buttonCart";
+import { useDispatch, useSelector } from "react-redux";
+import { addtocart, deletetocart } from "../Redux/Action";
 
 const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
 
 export default function itemsScreen({ route, navigation }) {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   const { title } = route.params;
   const { img } = route.params;
   const { DeliveryDescription } = route.params;
@@ -69,21 +74,17 @@ export default function itemsScreen({ route, navigation }) {
       </View>
       <View style={styles.btncontainer}>
         <Button
-          onPress={() =>
-            navigation.navigate("Like", {
-              title,
-              DeliveryDescription,
-              id,
-            })
-          }
+          onPress={() => dispatch(addtocart(title, img))}
           style={styles.btn}
-          title="Add To Cart"
+          title="Add to cart"
           txtstyle={{ color: "white" }}
         />
       </View>
     </SafeAreaView>
   );
 }
+//TODO:
+//To add the add to cart in a "ADD TO CART" button
 
 const styles = StyleSheet.create({
   container: {

@@ -4,9 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeNavigator from "./HomeNavigator";
 import AccountScreen from "../Screens/AccountScreen";
-import LikedScreen from "../Screens/LikedScreen";
+import CartScreen from "../Screens/CartScreen";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
-import { bounce } from "react-native/Libraries/Animated/src/Easing";
+
 import SearchScreen from "../Screens/SearchScreen";
 
 const Tab = createBottomTabNavigator();
@@ -52,7 +52,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="Like"
-      component={LikedScreen}
+      component={CartScreen}
       options={{
         tabBarIcon: ({ size, color }) => (
           <MaterialCommunityIcons name="heart" size={25} color={color} />

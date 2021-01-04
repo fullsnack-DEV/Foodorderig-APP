@@ -11,13 +11,20 @@ import Colors from "../config/colors";
 const WIDTH = Dimensions.get("window").width;
 
 const HEIGHT = Dimensions.get("window").width;
-export default function Button({ title, navigation, style, txtstyle }) {
+export default function Button({
+  title,
+  navigation,
+  style,
+  txtstyle,
+  onpress,
+}) {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate("home")}
       style={[styles.btn, style]}
     >
       <Text style={[styles.txt, txtstyle]}>{title}</Text>
+      onPress={onpress}
     </TouchableOpacity>
   );
 }

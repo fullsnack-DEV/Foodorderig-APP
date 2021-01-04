@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Provider } from "react-redux";
+import { store } from "./Redux/Store";
 
 import { StatusBar } from "expo-status-bar";
 import * as font from "expo-font";
@@ -30,9 +32,11 @@ export default function App() {
 
   if (fontload) {
     return (
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <AppNavigator />
+        </NavigationContainer>
+      </Provider>
     );
   } else {
     return (

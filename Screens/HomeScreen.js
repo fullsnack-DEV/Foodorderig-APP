@@ -17,7 +17,7 @@ import Colors from "../config/colors";
 import Itemlist from "../components/Itemlist";
 import Recipedata from "../data/Recipedata";
 
-//functions
+//function to filter the data from the dummy data set 
 const filterbytag = (tag) => {
   return Recipedata.filter((Recipedata) => {
     return Recipedata.tag == tag;
