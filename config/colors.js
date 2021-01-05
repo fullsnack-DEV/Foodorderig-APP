@@ -7,6 +7,7 @@ export default {
   grey_color: "#9A9A9D",
   lightgrey_color: "#EFEEEE",
   tabicon_color: "#ADADAF",
+  swipe_color: "#FA4A0C ",
 };
 
 //All the Color styles

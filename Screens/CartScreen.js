@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import colors from "../config/colors";
 import Button from "../components/buttonCart";
+import listitemdeleteitem from "../components/listitemdeleteitem";
 
 import {
   View,
@@ -51,6 +52,7 @@ export default function CartScreen({}) {
             style={styles.cartlist}
             title={data.item.title}
             img={data.item.img}
+            renderRightActions={listitemdeleteitem}
           />
         )}
       />
