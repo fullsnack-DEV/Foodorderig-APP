@@ -19,10 +19,7 @@ export default function Button({
   onpress,
 }) {
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("home")}
-      style={[styles.btn, style]}
-    >
+    <TouchableOpacity style={[styles.btn, style]}>
       <Text style={[styles.txt, txtstyle]}>{title}</Text>
       onPress={onpress}
     </TouchableOpacity>

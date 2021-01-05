@@ -8,6 +8,7 @@ import { store } from "./Redux/Store";
 import { StatusBar } from "expo-status-bar";
 import * as font from "expo-font";
 import { AppLoading } from "expo";
+import StoreContext from "./Redux/Contexts";
 
 //Screens Import
 import Welcomescreen from "./Screens/Welcomescreen";

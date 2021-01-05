@@ -1,21 +1,27 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import colors from "../config/colors";
+import Button from "../components/buttonCart";
+
 import {
   View,
   Text,
   SafeAreaView,
   StyleSheet,
-  Button,
   FlatList,
   TouchableOpacity,
   Image,
+  Dimensions,
 } from "react-native";
 import Recipes from "../data/Recipedata";
+import store from "../Redux/Store";
+import CartList from "../components/CartList";
 
-//TODO:
-//TO implement a Add to cart functionality in this screen
-//To manage the screen flow
+const HEIGHT = Dimensions.get("window").height;
+const WIDTH = Dimensions.get("window").width;
 
 export default function CartScreen({}) {
+  const foods = useSelector((state) => state.cart);
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.navcontainer}>
@@ -33,13 +39,27 @@ export default function CartScreen({}) {
       <View style={styles.info}>
         <Text style={styles.infotext}>Swipe left to delete</Text>
       </View>
-      <View style={styles.foodcard}>
-        <View style={styles.imgcontainer}>
-          <Text> Food Image</Text>
-        </View>
-        <View style={styles.infocontainer}>
-          <Text>Food Info</Text>
-        </View>
+      <FlatList
+        style={styles.foodlistcontainer}
+        data={foods}
+        verticle
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(foods) => foods.title}
+        bottomDivider
+        renderItem={(data) => (
+          <CartList
+            style={styles.cartlist}
+            title={data.item.title}
+            img={data.item.img}
+          />
+        )}
+      />
+      <View style={styles.btncontainer}>
+        <Button
+          style={styles.btn}
+          title="Complete Order"
+          txtstyle={{ color: "white" }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -68,23 +88,20 @@ const styles = StyleSheet.create({
     fontFamily: "itim",
     fontSize: 16,
   },
-  foodcard: {
-    top: 175,
-    left: 46,
-    backgroundColor: "#fff",
-    flexDirection: "row",
-    height: 102,
-    width: 315,
-    borderRadius: 25,
-  },
+  foodlistcontainer: {
+    top: 150,
 
-  imgcontainer: {
-    top: 16,
-    left: 17,
+    alignSelf: "center",
+
+    width: "90%",
   },
-  infocontainer: {
-    top: 27,
-    left: 102,
+  btncontainer: {
     alignItems: "center",
+    marginTop: HEIGHT * 0.04,
+    marginBottom: 8,
+  },
+  btn: {
+    backgroundColor: colors.main_color,
+    width: "50%",
   },
 });
