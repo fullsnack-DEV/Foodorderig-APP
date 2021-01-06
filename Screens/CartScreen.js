@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { deletetocart } from "../Redux/Action";
 import colors from "../config/colors";
 import Button from "../components/buttonCart";
-import listitemdeleteitem from "../components/listitemdeleteitem";
+import Listitemdeleteitem from "../components/listitemdeleteitem";
 
 import {
   View,
@@ -21,8 +22,10 @@ import CartList from "../components/CartList";
 const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
 
-export default function CartScreen({}) {
+export default function CartScreen({ navigation }) {
   const foods = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.navcontainer}>
@@ -43,16 +46,18 @@ export default function CartScreen({}) {
       <FlatList
         style={styles.foodlistcontainer}
         data={foods}
-        verticle
         showsVerticalScrollIndicator={false}
-        keyExtractor={(foods) => foods.title}
-        bottomDivider
+        keyExtractor={(foods) => foods.key}
         renderItem={(data) => (
           <CartList
             style={styles.cartlist}
             title={data.item.title}
             img={data.item.img}
-            renderRightActions={listitemdeleteitem}
+            renderRightActions={() => (
+              <Listitemdeleteitem
+                onPress={() => dispatch(deletetocart(data.item.key))}
+              />
+            )}
           />
         )}
       />
@@ -61,6 +66,7 @@ export default function CartScreen({}) {
           style={styles.btn}
           title="Complete Order"
           txtstyle={{ color: "white" }}
+          onPress={() => navigation.navigate("payment")}
         />
       </View>
     </SafeAreaView>
@@ -95,7 +101,7 @@ const styles = StyleSheet.create({
 
     alignSelf: "center",
 
-    width: "90%",
+    width: "100%",
   },
   btncontainer: {
     alignItems: "center",

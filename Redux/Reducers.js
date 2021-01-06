@@ -12,12 +12,17 @@ export const mainreducer = (state = intialState, action) => {
       return {
         //add
         ...state,
-        cart: state.cart.concat({ title: action.data, img: action.img }),
+        cart: state.cart.concat({
+          title: action.data,
+          img: action.img,
+          key: Math.random(),
+        }),
       };
 
     case DELETETOCART:
       return {
-        //delete
+        ...state,
+        cart: state.cart.filter((item) => item.key != action.key),
       };
     default:
       return state;

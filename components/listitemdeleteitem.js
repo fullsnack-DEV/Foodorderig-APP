@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+
 //importing color pallete
 import Colors from "../config/colors";
 
-export default function listitemdeleteitem() {
+export default function listitemdeleteitem({ onPress }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
         <Image
           style={styles.deleteicon}
@@ -24,7 +25,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: Colors.main_color,
     alignItems: "center",
-    marginVertical: 8,
+    marginTop: 45,
+    right: 25,
   },
   deleteicon: {
     height: "60%",

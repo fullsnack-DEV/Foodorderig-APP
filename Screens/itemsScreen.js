@@ -74,7 +74,7 @@ export default function itemsScreen({ route, navigation }) {
       </View>
       <View style={styles.btncontainer}>
         <Button
-          onPress={() => dispatch(addtocart(title, img))}
+          onPress={() => dispatch(addtocart(title, img, id))}
           style={styles.btn}
           title="Add to cart"
           txtstyle={{ color: "white" }}

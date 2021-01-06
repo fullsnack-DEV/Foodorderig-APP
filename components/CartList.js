@@ -30,11 +30,19 @@ const styles = StyleSheet.create({
     width: 315,
     borderRadius: 25,
     marginBottom: 25,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.11,
+    shadowRadius: 1.0,
   },
 
   imgcontainer: {
     top: 16,
     left: 17,
+    alignItems: "center",
   },
   infocontainer: {
     top: 27,
@@ -50,5 +58,6 @@ const styles = StyleSheet.create({
   cartimg: {
     height: 60,
     width: 55,
+    marginVertical: 9,
   },
 });

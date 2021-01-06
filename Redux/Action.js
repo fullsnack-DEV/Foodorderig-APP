@@ -7,7 +7,7 @@ export const addtocart = (title, img) => ({
   img: img,
 });
 
-export const deletetocart = (id) => ({
+export const deletetocart = (key) => ({
   type: DELETETOCART,
-  data: id,
+  key: key,
 });

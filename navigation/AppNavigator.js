@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeNavigator from "./HomeNavigator";
 import AccountScreen from "../Screens/AccountScreen";
 import CartScreen from "../Screens/CartScreen";
+import CartNavigator from "./CartNavigator";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
 import SearchScreen from "../Screens/SearchScreen";
@@ -52,7 +53,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="Like"
-      component={CartScreen}
+      component={CartNavigator}
       options={{
         tabBarIcon: ({ size, color }) => (
           <MaterialCommunityIcons name="heart" size={25} color={color} />
