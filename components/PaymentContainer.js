@@ -5,18 +5,20 @@ import { RadioButton } from "react-native-paper";
 export default function PaymentContainer({
   title,
   image,
-
+  style,
+  styleheading,
   image2,
   heading1,
   heading2,
+  alignstyle,
 }) {
   const [checked, setChecked] = React.useState("first");
   return (
-    <View>
-      <View style={styles.subheadingcontainer}>
-        <Text style={styles.subtxt}>{title}</Text>
+    <View style={styles.container}>
+      <View style={[styles.subheadingcontainer]}>
+        <Text style={[styles.subtxt, styleheading]}>{title}</Text>
       </View>
-      <View style={styles.paymentcontainer}>
+      <View style={[styles.paymentcontainer, style]}>
         <View style={styles.card}>
           <RadioButton
             style={styles.radbutton}
@@ -24,27 +26,32 @@ export default function PaymentContainer({
             status={checked === "first" ? "checked" : "unchecked"}
             onPress={() => setChecked("first")}
           />
-          <View styles={styles.cardlayout}>
-            <View style={styles.cardbg}>
-              <Image style={styles.cardimg} source={image} />
+
+          {image && (
+            <View styles={styles.cardlayout}>
+              <View style={styles.cardbg}>
+                <Image style={styles.cardimg} source={image} />
+              </View>
             </View>
-          </View>
+          )}
           <Text style={styles.txtcard}>{heading1}</Text>
         </View>
         <View style={styles.seprator} />
 
         <View style={styles.bankaccount}>
-          <View style={styles.bank}>
+          <View style={[styles.bank, alignstyle]}>
             <RadioButton
               value="second"
               status={checked === "second" ? "checked" : "unchecked"}
               onPress={() => setChecked("second")}
             />
-            <View styles={styles.banklayout}>
-              <View style={styles.cardbg1}>
-                <Image style={styles.bankimg} source={image2} />
+            {image2 && (
+              <View styles={styles.banklayout}>
+                <View style={styles.cardbg1}>
+                  <Image style={styles.bankimg} source={image2} />
+                </View>
               </View>
-            </View>
+            )}
             <Text style={styles.txtbank}>{heading2}</Text>
           </View>
         </View>
@@ -54,8 +61,9 @@ export default function PaymentContainer({
 }
 
 const styles = StyleSheet.create({
+  container: {},
   subheadingcontainer: {
-    top: 165,
+    top: 89,
     left: 60,
   },
   subtxt: {
@@ -63,11 +71,11 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   paymentcontainer: {
-    height: 230,
+    height: 190,
     width: 315,
     backgroundColor: "#fff",
 
-    top: 190,
+    top: 90,
     left: 46,
     borderRadius: 25,
   },
@@ -81,7 +89,7 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
 
-    height: 85,
+    height: 55,
     top: 20,
     left: 25,
     width: 262,
@@ -91,13 +99,13 @@ const styles = StyleSheet.create({
   bank: {
     flexDirection: "row",
 
-    height: 85,
+    height: 55,
     top: 20,
     left: 25,
     width: 262,
     justifyContent: "space-around",
     alignItems: "center",
-    marginVertical: 20,
+    marginVertical: 35,
   },
   banklayout: {
     height: 30,

@@ -25,7 +25,7 @@ export default function Itemlist({ title }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-
+    marginVertical: 15,
     marginLeft: 50,
   },
   wrapper: {

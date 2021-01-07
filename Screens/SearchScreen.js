@@ -1,11 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import SearchCom from "../components/SearchCom";
 
 export default function SearchScreen() {
   return (
-    <View>
-      <Text> search screen</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.searchbar}>
+        <SearchCom />
+      </View>
+    </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  searchbar: {
+    top: 45,
+    height: "100%",
+  },
+});

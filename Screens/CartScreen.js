@@ -18,6 +18,7 @@ import {
 import Recipes from "../data/Recipedata";
 import store from "../Redux/Store";
 import CartList from "../components/CartList";
+import NavBarcom from "../components/NavBarcom";
 
 const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
@@ -27,18 +28,12 @@ export default function CartScreen({ navigation }) {
 
   const dispatch = useDispatch();
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.navcontainer}>
-        <View style={styles.arrow}>
-          <TouchableOpacity onPress={() => navigation.navigate("home")}>
-            <Image source={require("../assets/chevronleft.png")} />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.carticon}>
-          <Text style={styles.carttext}>Cart</Text>
-        </View>
-      </View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#F5F5F8" }}>
+      <NavBarcom
+        title={"Cart"}
+        icon={require("../assets/chevronleft.png")}
+        onPress={() => navigation.navigate("home")}
+      />
 
       <View style={styles.info}>
         <Text style={styles.infotext}>Swipe left to delete</Text>
@@ -47,7 +42,7 @@ export default function CartScreen({ navigation }) {
         style={styles.foodlistcontainer}
         data={foods}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(foods) => foods.key}
+        keyExtractor={(foods) => foods.key.toString()}
         renderItem={(data) => (
           <CartList
             style={styles.cartlist}
@@ -74,20 +69,6 @@ export default function CartScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  navcontainer: {
-    flexDirection: "row",
-    top: 59,
-  },
-  arrow: {
-    left: 30,
-  },
-  carticon: {
-    left: 150,
-  },
-  carttext: {
-    fontSize: 21,
-    fontFamily: "itim",
-  },
   info: {
     top: 143,
     left: 130,

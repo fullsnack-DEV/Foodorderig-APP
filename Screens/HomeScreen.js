@@ -17,7 +17,7 @@ import Colors from "../config/colors";
 import Itemlist from "../components/Itemlist";
 import Recipedata from "../data/Recipedata";
 
-//function to filter the data from the dummy data set 
+//function to filter the data from the dummy data set
 const filterbytag = (tag) => {
   return Recipedata.filter((Recipedata) => {
     return Recipedata.tag == tag;
@@ -44,8 +44,6 @@ export default function HomeScreen({ navigation }) {
         <Text style={styles.txt}> Delicious </Text>
         <Text style={styles.txt1}>food for you </Text>
       </View>
-
-      <SearchCom />
 
       <ScrollView style={{ flex: 1.5 }}>
         <Itemlist title="Foods" />
