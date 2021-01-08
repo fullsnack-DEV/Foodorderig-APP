@@ -27,12 +27,13 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 15,
     height: "7%",
-
+    top: 55,
+    left: 15,
     justifyContent: "center",
   },
   search: {
     backgroundColor: "#fff",
-    height: "70%",
+    height: "85%",
     width: "70%",
     marginLeft: 40,
     borderRadius: 50,

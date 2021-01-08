@@ -32,12 +32,7 @@ export default function HomeScreen({ navigation }) {
           <Image style={styles.nav} source={require("../assets/hammenu.png")} />
         </View>
 
-        <View>
-          <Image
-            style={styles.ham}
-            source={require("../assets/shoppingcart.png")}
-          />
-        </View>
+        <View></View>
       </View>
 
       <View style={styles.txtcontainer}>
