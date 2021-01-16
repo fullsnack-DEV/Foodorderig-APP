@@ -27,4 +27,4 @@ How to make a Reusable Components
 
 ## Below are some Images of the Application
 
-![Screenshot_2021-01-16-18-58-04-077_host exp exponent](https://user-images.githubusercontent.com/56273302/104813954-530e7e80-5832-11eb-9ac6-4d176f8c803e.jpg)
+![Optimized-Screenshot_2021-01-16-18-58-04-077_host exp exponent](https://user-images.githubusercontent.com/56273302/104814052-d6c86b00-5832-11eb-9d27-af3b23ba6631.jpg)
