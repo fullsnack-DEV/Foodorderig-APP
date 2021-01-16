@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer  , getFocusedRouteNameFromRoute } from "@react-navigation/native";
+
 import { Provider } from "react-redux";
 import { store } from "./Redux/Store";
 
-import { StatusBar } from "expo-status-bar";
 import * as font from "expo-font";
 import { AppLoading } from "expo";
-import StoreContext from "./Redux/Contexts";
 
 //Screens Import
-import Welcomescreen from "./Screens/Welcomescreen";
-import HomeScreen from "./Screens/HomeScreen";
-import itemsScreen from "./Screens/itemsScreen";
 import AppNavigator from "./navigation/AppNavigator";
-import Authnavigator from "./navigation/Authnavigator";
 
 //constants
-const Stack = createStackNavigator();
 
 //code
 
