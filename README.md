@@ -1,6 +1,9 @@
 # FoodOrdering Application 
 
  This Application is build using React Native . The design is taken from Dribble. Application have a 7 Screens.
+ 
+ 
+ Applicattion is build using Expo
 
 
  Application have some animations implemented using Animated API from React Native.
@@ -21,3 +24,4 @@ How to make a use of animations.
 How to implement a Redux for state managment
 
 How to make a Reusable Components 
+
